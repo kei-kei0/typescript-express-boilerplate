@@ -6,6 +6,8 @@ import express, { NextFunction, Request, Response } from "express"
 import * as ItemService from "./items.service"
 import { BaseItem, Item } from "./item.interface"
 
+import { checkJwt } from "../middleware/authz.middleware"
+
 /**
  * Router Definition
  */
@@ -45,6 +47,9 @@ itemRouter.get("/:id", async (req: Request, res: Response) => {
     res.end()
   }
 })
+
+// Mount authorization middleware
+itemRouter.use(checkJwt)
 
 // POST items
 itemRouter.post("/", async (req: Request, res: Response, next: NextFunction) => {

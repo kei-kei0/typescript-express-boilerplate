@@ -15,6 +15,12 @@ yarn add -D ts-node
 yarn run tsc --init
 yarn add -D ts-node-dev
 yarn add -D @types/es6-promise
+
+yarn add express-jwt jwks-rsa
+yarn add -D @types/express-jwt
+
+yarn add morgan
+yarn add -D @types/morgan
 ```
 
 # run dev server
